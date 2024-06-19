@@ -1,20 +1,21 @@
-# Use an official Node runtime as a parent image
-FROM node:18-alpine
+# Use an official node image as the base image
+FROM node:18
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /client
 
-# Copy the current directory contents into the container at /client
-COPY . /client
+# Copy package.json and package-lock.json/yarn.lock
+COPY package.json .
+COPY package-lock.json .
 
-# Install any needed packages specified in package.json
+# Install dependencies
 RUN npm install
 
-# Make port 3000 available to the world outside this container
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Define environment variable
-ENV NAME EnviroTutorClient
-
-# Run npm start when the container launches
+# Start the application
 CMD ["npm", "start"]
