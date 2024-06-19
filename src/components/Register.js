@@ -8,7 +8,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://envirotutor-backend-1:8000/api/register', { username, password });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/register`, { username, password });
       console.log('Registration request sent:', response);
       alert('Registration Successful');
     } catch (err) {
@@ -18,9 +18,9 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="App-section">
       <h2>Register</h2>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <input
         type="text"
         placeholder="Username"

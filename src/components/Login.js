@@ -8,7 +8,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://envirotutor-backend-1:8000/api/login', { username, password });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/login`, { username, password });
       console.log('Login request sent:', response);
       alert('Login Successful');
     } catch (err) {
@@ -18,9 +18,9 @@ function Login() {
   };
 
   return (
-    <div>
+    <div className="App-section">
       <h2>Login</h2>
-      {error && <p>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <input
         type="text"
         placeholder="Username"
