@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="logo.png" alt="EnviroTutor Logo" className="App-logo" />
+        <img src="Subject.png" alt="EnviroTutor Logo" className="App-logo" />
         <h1>EnviroTutor</h1>
         <p>
           Welcome to EnviroTutor, your guide to setting up and managing development environments.
