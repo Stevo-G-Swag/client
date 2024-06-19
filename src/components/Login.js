@@ -8,7 +8,7 @@ function Login() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://172.18.0.3:8000/api/login', { username, password });
+      const response = await axios.post('http://backend:8000/api/login', { username, password });
       console.log('Login request sent:', response);
       alert('Login Successful');
     } catch (err) {

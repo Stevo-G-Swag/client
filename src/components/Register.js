@@ -8,7 +8,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://172.18.0.3:8000/api/register', { username, password });
+      const response = await axios.post('http://backend:8000/api/register', { username, password });
       console.log('Registration request sent:', response);
       alert('Registration Successful');
     } catch (err) {
