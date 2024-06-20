@@ -7,6 +7,7 @@ function Login() {
   const [error, setError] = useState('');
 
   const handleLogin = async () => {
+    console.log('Attempting login with username:', username, 'and password:', password); // Added log for username and password
     try {
       const response = await axios.post("/api/login", { username, password });
       console.log('Login request sent:', response);

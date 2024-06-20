@@ -7,6 +7,7 @@ function Register() {
   const [error, setError] = useState('');
 
   const handleRegister = async () => {
+    console.log('Attempting registration with username:', username, 'and password:', password); // Added log for username and password
     try {
       const response = await axios.post("/api/register", { username, password });
       console.log('Registration request sent:', response);
