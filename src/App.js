@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import EnvironmentSetup from './components/EnvironmentSetup';
@@ -25,12 +25,12 @@ function App() {
           </nav>
         </header>
         <main>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/environment-setup" component={EnvironmentSetup} />
-            <Route path="/" exact component={Home} />
-          </Switch>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/environment-setup" element={<EnvironmentSetup />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
         </main>
       </div>
     </Router>
