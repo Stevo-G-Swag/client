@@ -11,7 +11,11 @@ function Register() {
     try {
       const response = await axios.post("/api/register", { username, password });
       console.log('Registration request sent:', response);
-      alert('Registration Successful');
+      if (response.status === 201) {
+        alert('Registration Successful');
+      } else {
+        throw new Error('Registration failed with status: ' + response.status);
+      }
     } catch (err) {
       console.error('Registration error:', err.response ? err.response.data.error : err.message);
       setError(err.response ? err.response.data.error : 'An unknown error occurred');

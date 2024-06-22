@@ -7,13 +7,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ff6347; /* Changed from #282c34 to a more vibrant color */
   padding: 20px;
   color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffa500; /* Changed from #61dafb to a more eye-catching color */
 }
 
 .App-section {
