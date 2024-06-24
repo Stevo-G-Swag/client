@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import EnvironmentSetup from './components/EnvironmentSetup';
+import ProgressTracker from './components/ProgressTracker';
 import './App.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/environment-setup" element={<EnvironmentSetup />} />
           </Routes>
+          <ProgressTracker />
         </main>
       </div>
     </Router>
