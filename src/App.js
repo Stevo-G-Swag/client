@@ -7,7 +7,7 @@ import ProgressTracker from './components/ProgressTracker';
 import './App.css';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn] = useState(false);
 
   return (
     <Router>
