@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -7,20 +7,29 @@ import ProgressTracker from './components/ProgressTracker';
 import './App.css';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <img src="Subject.png" alt="EnviroTutor Logo" className="App-logo" />
-          <h1>EnviroTutor</h1>
+          <Link to="/">
+            <img src="Subject.png" alt="EnviroTutor Logo" className="App-logo" />
+            <h1>EnviroTutor</h1>
+          </Link>
           <p>
             Welcome to EnviroTutor, your guide to setting up and managing development environments.
             Follow our step-by-step tutorials and receive real-time AI assistance to enhance your learning experience.
           </p>
           <nav className="App-nav">
             <ul>
-              <li><Link to="/login">Login</Link></li>
-              <li><Link to="/register">Register</Link></li>
+              {!isLoggedIn ? (
+                <>
+                  <li><Link to="/login">Login</Link></li>
+                  <li><Link to="/register">Register</Link></li>
+                </>
+              ) : null}
+              <li><Link to="/">Home</Link></li>
               <li><Link to="/environment-setup">Environment Setup</Link></li>
             </ul>
           </nav>
